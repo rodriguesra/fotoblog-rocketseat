@@ -164,3 +164,35 @@ footer p {
     padding: 1.6rem;
     text-align: center;
 }
+
+header {
+    animation: move .2s;
+    --startY: -100%;
+}
+
+footer {
+    animation: move .2s;
+    --startY: 100%;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+.item {
+    animation: appear .4s var(--delay) backwards;
+    --delay: .4s;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
